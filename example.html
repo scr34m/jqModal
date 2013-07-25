@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jqModal example</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+    <link type="text/css" rel="stylesheet" media="all" href="jqmodal.css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="jqmodal.js"></script>
+    <style type="text/css">
+        body {
+            font-family: arial, sans-serif;
+            color: #777;
+            padding: 50px;
+        }
+
+        .pure-button-xsmall {
+            font-size: 75%;
+        }
+
+        .jqmWindow {
+            font-family: arial, sans-serif;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .jqmWindow hr {
+            height: 1px;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .jqmWindow .header {
+            background: #0E90D2;
+            padding: 10px;
+            color: #fff;
+        }
+
+        .jqmWindow .body {
+            padding: 10px;
+        }
+
+        .jqmWindow .header .jqmClose {
+            color: #fff;
+            text-decoration: none;
+            float: right;
+            font-size: 11px;
+            line-height: 14px;
+        }
+
+        section p {
+            margin: 0 20px 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+<div class="pure-g">
+    <section class="pure-u-1-2">
+        <p>#1 Default inline example to show a simple modal window.</p>
+        <p><a class="pure-button pure-button-xsmall jqModal" href="#">Show example #1</a></p>
+        <div class="jqmWindow" id="example-1">
+            <div class="header"><span>Example #1</span><a href="#" class="jqmClose">(close)</a></div>
+            <div class="body">
+                <p>Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum.</p>
+                <p>In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $().ready(function () {
+                $('#example-1').jqm();
+            });
+        </script>
+    </section>
+    <section class="pure-u-1-2">
+        <p>#2 Overflowed content scrolled not the entire background.</p>
+        <p><a class="pure-button pure-button-xsmall example-2" href="#">Show example #2</a></p>
+        <div class="jqmWindow" id="example-2">
+            <div class="header"><span>Example #2</span><a href="#" class="jqmClose">(close)</a></div>
+            <div class="body">
+                <p>Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum.</p>
+                <p>In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum.</p>
+                <p>In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum.</p>
+                <p>In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $().ready(function () {
+                $('#example-2').jqm({trigger: 'a.example-2'});
+            });
+        </script>
+    </section>
+    <section class="pure-u-1-2">
+        <p>PLACEHOLDER Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum. Nullam quis augue in odio aliquam elementum. Phasellus pulvinar risus eu neque iaculis, scelerisque condimentum ipsum tincidunt. In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section class="pure-u-1-2">
+        <p>PLACEHOLDER Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum. Nullam quis augue in odio aliquam elementum. Phasellus pulvinar risus eu neque iaculis, scelerisque condimentum ipsum tincidunt. In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section class="pure-u-1-2">
+        <p>PLACEHOLDER Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum. Nullam quis augue in odio aliquam elementum. Phasellus pulvinar risus eu neque iaculis, scelerisque condimentum ipsum tincidunt. In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section class="pure-u-1-2">
+        <p>PLACEHOLDER Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum. Nullam quis augue in odio aliquam elementum. Phasellus pulvinar risus eu neque iaculis, scelerisque condimentum ipsum tincidunt. In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+    <section class="pure-u-1-2">
+        <p>PLACEHOLDER Praesent sit amet ante consectetur, rhoncus augue eu, pharetra orci. Vestibulum a odio vehicula augue aliquam aliquam. Aenean ornare augue a lorem egestas condimentum. Nullam quis augue in odio aliquam elementum. Phasellus pulvinar risus eu neque iaculis, scelerisque condimentum ipsum tincidunt. In tempus magna quis velit elementum condimentum. Suspendisse tristique mollis dui vitae tincidunt. Ut ac sapien lacus. Quisque vehicula non enim nec ultrices. Proin ac felis et felis feugiat condimentum. Morbi adipiscing imperdiet erat, vel hendrerit ligula gravida a. Etiam vel lorem non sem tristique egestas vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+</div>
+</body>
+</html>

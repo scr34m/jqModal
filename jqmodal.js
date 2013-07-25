@@ -13,6 +13,7 @@
 (function($) {
 	$.fn.jqm = function(o) {
 		var p = {
+            containerClass: 'jqmContainer',
 			overlay: 50,
 			overlayClass: 'jqmOverlay',
 			closeClass: 'jqmClose',
@@ -67,15 +68,13 @@
 				cc = '.' + c.closeClass,
 				z = (parseInt(h.w.css('z-index'))),
 				z = (z > 0) ? z : 3000,
-				o = $('<div></div>').css({
-					height: '100%',
-					width: '100%',
-					position: 'fixed',
-					left: 0,
-					top: 0,
-					'z-index': z - 1,
-					opacity: c.overlay / 100
-				});
+                oc = $('<div></div>').css({
+                    'z-index': z - 1
+                });
+                o = $('<div></div>').css({
+                    opacity: c.overlay / 100,
+                    'z-index': z - 2
+                });
 			if (h.a) return F;
 			h.t = t;
 			h.a = true;
@@ -86,6 +85,11 @@
 			} else if (c.overlay > 0) h.w.jqmAddClose(o);
 			else o = F;
 
+            if (!$('body').hasClass('noscroll')) {
+                $('body').addClass('noscroll')
+            }
+
+            h.oc = oc.addClass(c.containerClass).prependTo('body');
 			h.o = (o) ? o.addClass(c.overlayClass).prependTo('body') : F;
 			if (ie6) {
 				$('html,body').css({
@@ -118,6 +122,7 @@
 			if (c.toTop && h.o) h.w.before('<span id="jqmP' + h.w[0]._jqm + '"></span>').insertAfter(h.o);
 			(c.onShow) ? c.onShow(h) : h.w.show();
 			e(h);
+            h.oc.append($.jqm.hash[s].w);
 			return F;
 		},
 		close: function(s) {
@@ -134,6 +139,9 @@
 				h.w.hide();
 				if (h.o) h.o.remove();
 			}
+            h.oc.remove();
+            $('body').append($.jqm.hash[s].w);
+            $('body').removeClass('noscroll');
 			return F;
 		},
 		params: {}
